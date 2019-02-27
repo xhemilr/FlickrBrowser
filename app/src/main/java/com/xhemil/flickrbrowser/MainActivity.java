@@ -59,9 +59,7 @@ public class MainActivity extends BaseActivity implements GetFlickrJsonData.OnDa
         super.onResume();
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         String queryResult = sharedPreferences.getString(FLICKR_QUERY, "");
-        Log.d(TAG, "onResume: query " + queryResult);
         String replcaded = queryResult.replace(" ", ",");
-        Log.d(TAG, "onResume: query " + replcaded);
 
         if (queryResult.length() > 0){
             GetFlickrJsonData getFlickrJsonData =
